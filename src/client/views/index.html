@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sentiment Analyzer</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div>
+                <p>Enter a URL of an article / a blog to discover its sentiment.</p>
+                <section>
+                    <form id="form">
+                        <input id="article-url" type="text" name="input" value="" placeholder="Enter Article URL here" />
+                        <button type="submit" class="btn-submit">
+              Submit
+            </button>
+                    </form>
+                </section>
+                <strong>Form Results:</strong>
+                <table id="results" class="d_none">
+                    <div id="loader" class="d_none"></div>
+                    <tr>
+                        <th>Text:</th>
+                        <th>Agreement:</th>
+                        <th>Subjectivity:</th>
+                        <th>Confidence:</th>
+                        <th>Confidence:</th>
+                        <th>Score:</th>
+                    </tr>
+                    <tr>
+                        <td id="text"></td>
+                        <td id="agreement"></td>
+                        <td id="subjectivity"></td>
+                        <td id="confidence"></td>
+                        <td id="irony"></td>
+                        <td id="score_tag"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+            })
+        }
+    </script>
+</body>
+
+</html>
