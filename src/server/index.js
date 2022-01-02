@@ -27,7 +27,7 @@ app.use(cors());
 
 // root path
 app.get('/', function(req, res) {
-    res.sendFile(path.resolve('./src/client/views/index.html'))
+    res.sendFile(path.resolve("dist/index.html"));
 })
 
 // sentiment path & using meaningcloud API
